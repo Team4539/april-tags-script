@@ -32,13 +32,14 @@ while True:
     # Filter detections based on size and pose
     valid_detections = []
     for detection in detections:
+        valid_detections.append(detections)
         # Filter out most false positives
-        if detection.decision_margin > 0.9:
+        #if detection.decision_margin > 0.9:
             # more filtering
-            if detection.tag_id is not None:
+        #    if detection.tag_id is not None:
                 # even more filtering
-                if detection.hamming < 1:
-                    valid_detections.append(detection)
+        #        if detection.hamming < 1:
+        #            valid_detections.append(detection)
 
     # Draw rectangles and tag_id text for the valid AprilTags
     for detection in valid_detections:
